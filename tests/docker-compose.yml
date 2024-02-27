@@ -1,0 +1,15 @@
+version: "2"
+
+services:
+  vmetrics:
+    environment:
+      VICTORIA_METRICS_TOKEN: test-token
+    image: victoriametrics/victoria-metrics:v$VMAUTH_VER
+
+  vmauth:
+    environment:
+      VICTORIA_METRICS_TOKEN: test-token
+      VICTORIA_METRICS_URL: http://tests-vmetrics-1:8428/
+    image: $IMAGE
+    depends_on:
+    - vmetrics

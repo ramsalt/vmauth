@@ -1,0 +1,24 @@
+name: Build docker image
+
+on:
+  push:
+    branches:
+    - main
+
+    tags:
+    - '*'
+
+env:
+  DOCKER_REGISTRY: ghcr.io
+  DOCKER_USERNAME: ${{ github.actor }}
+  DOCKER_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  vmauth-1:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ./.github/actions
+      with:
+        version: '1.93.11'
+        tags: 1.93.11,1.93,1,latest
