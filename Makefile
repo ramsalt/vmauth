@@ -15,7 +15,7 @@ endif
 REPO = ghcr.io/ramsalt/vmauth
 NAME = vmauth-$(VMAUTH_MINOR_VER)
 
-ENV = -e VICTORIA_METRICS_TOKEN=test-token
+ENV = -e VMAUTH_TOKEN=test-token
 
 .PHONY: build test push shell run start stop logs clean release
 

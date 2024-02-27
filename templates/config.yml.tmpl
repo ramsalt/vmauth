@@ -1,4 +1,4 @@
 users:
-  - bearer_token: {{ getenv "VICTORIA_METRICS_TOKEN" }}
+  - bearer_token: {{ getenv "VMAUTH_TOKEN" }}
     url_prefix:
     - {{ getenv "VICTORIA_METRICS_URL" "http://victoria-metrics:8428/" }}
